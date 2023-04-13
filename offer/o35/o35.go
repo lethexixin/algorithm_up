@@ -38,6 +38,8 @@ type Node struct {
 	Random *Node
 }
 
+// 执行用时： 4 ms , 在所有 Go 提交中击败了 42.14% 的用户
+// 内存消耗： 3.4 MB , 在所有 Go 提交中击败了 64.15% 的用户
 func copyRandomList(head *Node) *Node {
 	if head == nil {
 		return nil
@@ -64,6 +66,3 @@ func copyRandomList(head *Node) *Node {
 
 	return m[head]
 }
-
-// 执行用时： 4 ms , 在所有 Go 提交中击败了 42.14% 的用户
-//内存消耗： 3.4 MB , 在所有 Go 提交中击败了 64.15% 的用户

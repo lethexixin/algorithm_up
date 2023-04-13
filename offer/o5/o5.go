@@ -18,6 +18,8 @@ import "strings"
 //作者：Krahets
 //链接：https://leetcode.cn/leetbook/read/illustration-of-algorithm/50ywkd/
 
+// 执行用时： 0 ms , 在所有 Go 提交中击败了 100.00% 的用户
+// 内存消耗： 1.8 MB , 在所有 Go 提交中击败了 72.48% 的用户
 func replaceSpace(s string) string {
 	ns := strings.Builder{}
 
@@ -30,6 +32,3 @@ func replaceSpace(s string) string {
 	}
 	return ns.String()
 }
-
-//执行用时： 0 ms , 在所有 Go 提交中击败了 100.00% 的用户
-//内存消耗： 1.8 MB , 在所有 Go 提交中击败了 72.48% 的用户

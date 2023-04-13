@@ -28,6 +28,8 @@ import "container/list"
 //链接：https://leetcode.cn/leetbook/read/illustration-of-algorithm/5d3i87/
 
 // 方法1： 通过 list.List 实现
+//执行用时： 164 ms , 在所有 Go 提交中击败了 80.99% 的用户
+//内存消耗： 7.9 MB , 在所有 Go 提交中击败了 66.57% 的用户
 
 type CQueue struct {
 	a *list.List
@@ -58,6 +60,3 @@ func (q *CQueue) DeleteHead() int {
 	}
 	return q.b.Remove(q.b.Back()).(int)
 }
-
-//执行用时： 164 ms , 在所有 Go 提交中击败了 80.99% 的用户
-//内存消耗： 7.9 MB , 在所有 Go 提交中击败了 66.57% 的用户

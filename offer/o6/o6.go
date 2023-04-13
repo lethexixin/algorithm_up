@@ -21,6 +21,8 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// 执行用时： 0 ms , 在所有 Go 提交中击败了 100.00% 的用户
+// 内存消耗： 3 MB , 在所有 Go 提交中击败了 56.78% 的用户
 func reversePrint(head *ListNode) []int {
 	stack := make([]int, 0)
 
@@ -36,6 +38,3 @@ func reversePrint(head *ListNode) []int {
 
 	return res
 }
-
-//执行用时： 0 ms , 在所有 Go 提交中击败了 100.00% 的用户
-//内存消耗： 3 MB , 在所有 Go 提交中击败了 56.78% 的用户

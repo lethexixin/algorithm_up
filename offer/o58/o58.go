@@ -21,6 +21,12 @@ package o58
 //作者：Krahets
 //链接：https://leetcode.cn/leetbook/read/illustration-of-algorithm/589fz2/
 
+// 执行用时： 0 ms , 在所有 Go 提交中击败了 100.00% 的用户
+// 内存消耗： 3 MB , 在所有 Go 提交中击败了 76.36% 的用户
 func reverseLeftWords(s string, n int) string {
-	return ""
+	if n > len(s) || n <= 0 {
+		return s
+	}
+
+	return s[n:len(s)] + s[:n]
 }

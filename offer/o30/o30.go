@@ -25,6 +25,9 @@ package o30
 //作者：Krahets
 //链接：https://leetcode.cn/leetbook/read/illustration-of-algorithm/50bp33/
 
+//执行用时： 16 ms , 在所有 Go 提交中击败了 45.90% 的用户
+//内存消耗： 7.1 MB , 在所有 Go 提交中击败了 87.11% 的用户
+
 type MinStack struct {
 	data []int
 	sup  []int
@@ -60,6 +63,3 @@ func (s *MinStack) Top() int {
 func (s *MinStack) Min() int {
 	return s.sup[len(s.sup)-1]
 }
-
-//执行用时： 16 ms , 在所有 Go 提交中击败了 45.90% 的用户
-//内存消耗： 7.1 MB , 在所有 Go 提交中击败了 87.11% 的用户

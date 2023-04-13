@@ -26,6 +26,8 @@ package f2
 //链接：https://leetcode.cn/leetbook/read/illustration-of-algorithm/5d3i87/
 
 // 方法2： 通过 []int 数组 实现
+//执行用时： 168 ms , 在所有 Go 提交中击败了 63.83% 的用户
+//内存消耗： 7.9 MB , 在所有 Go 提交中击败了 57.71% 的用户
 
 type CQueue struct {
 	inStack, outStack []int
@@ -57,6 +59,3 @@ func (cq *CQueue) DeleteHead() int {
 	cq.outStack = cq.outStack[:len(cq.outStack)-1]
 	return x
 }
-
-//执行用时： 168 ms , 在所有 Go 提交中击败了 63.83% 的用户
-//内存消耗： 7.9 MB , 在所有 Go 提交中击败了 57.71% 的用户
