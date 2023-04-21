@@ -1,6 +1,8 @@
 package tree
 
-import "container/list"
+import (
+	"container/list"
+)
 
 // TrNode 二叉树结点结构体
 type TrNode struct {
@@ -73,31 +75,31 @@ func (t *TrNode) levelOrder() []int {
 }
 
 // preOrder 前序遍历
-func (t *TrNode) preOrder(nums []int) {
+func (t *TrNode) preOrder(nums *[]int) {
 	if t == nil {
 		return
 	}
 
 	// 根节点, 左节点, 右节点
-	nums = append(nums, t.Val)
+	*nums = append(*nums, t.Val)
 	t.Left.preOrder(nums)
 	t.Right.preOrder(nums)
 }
 
 // inOrder 中序遍历
-func (t *TrNode) inOrder(nums []int) {
+func (t *TrNode) inOrder(nums *[]int) {
 	if t == nil {
 		return
 	}
 
 	// 左子树, 根子树, 右子树
 	t.Left.inOrder(nums)
-	nums = append(nums, t.Val)
+	*nums = append(*nums, t.Val)
 	t.Right.inOrder(nums)
 }
 
 // postOrder 后序遍历
-func (t *TrNode) postOrder(nums []int) {
+func (t *TrNode) postOrder(nums *[]int) {
 	if t == nil {
 		return
 	}
@@ -105,7 +107,7 @@ func (t *TrNode) postOrder(nums []int) {
 	// 左子树, 右子树, 根子树
 	t.Left.postOrder(nums)
 	t.Right.postOrder(nums)
-	nums = append(nums, t.Val)
+	*nums = append(*nums, t.Val)
 }
 
 func generateBinary() (t *TrNode) {

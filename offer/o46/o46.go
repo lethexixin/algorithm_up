@@ -20,6 +20,23 @@ package o46
 //链接：https://leetcode.cn/leetbook/read/illustration-of-algorithm/99wd55/
 
 // todo 有点难
+// 执行用时： 0 ms, 在所有 Go 提交中击败了 100.00% 的用户
+// 内存消耗： 1.9 MB, 在所有 Go 提交中击败了 12.03% 的用户
 func translateNum(num int) int {
-	return 0
+	a, b, x, y := 1, 1, num%10, num%10
+	for num > 9 {
+		num /= 10
+		x = num % 10
+		tmp := 10*x + y
+		c := 0
+		if tmp >= 10 && tmp <= 25 {
+			c = a + b
+		} else {
+			c = a
+		}
+		b = a
+		a = c
+		y = x
+	}
+	return a
 }
