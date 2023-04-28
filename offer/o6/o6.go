@@ -31,10 +31,29 @@ func reversePrint(head *ListNode) []int {
 		head = head.Next
 	}
 
+	//建一个新的数组
 	res := make([]int, len(stack))
 	for i := 0; i < len(stack); i++ {
 		res[len(stack)-i-1] = stack[i]
 	}
 
 	return res
+}
+
+// 执行用时： 4 ms , 在所有 Go 提交中击败了 59.23% 的用户
+// 内存消耗： 2.9 MB , 在所有 Go 提交中击败了 91.21% 的用户
+func reversePrint2(head *ListNode) []int {
+	stack := make([]int, 0)
+
+	for head != nil {
+		stack = append(stack, head.Val)
+		head = head.Next
+	}
+
+	//原数组首尾交换
+	for i := 0; i < len(stack)/2; i++ {
+		stack[i], stack[len(stack)-1-i] = stack[len(stack)-1-i], stack[i]
+	}
+
+	return stack
 }

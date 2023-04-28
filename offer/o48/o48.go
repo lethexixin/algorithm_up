@@ -54,3 +54,18 @@ func lengthOfLongestSubstring(s string) int {
 
 	return max
 }
+
+func lengthOfLongestSubstring1(s string) int {
+	i, max := -1, 0
+	m := make(map[string]int)
+	for j, vs := range s {
+		n, ok := m[string(vs)]
+		if ok {
+			i = int(math.Max(float64(n), float64(i)))
+		}
+		m[string(vs)] = j
+		cur := j - i
+		max = int(math.Max(float64(max), float64(cur)))
+	}
+	return max
+}

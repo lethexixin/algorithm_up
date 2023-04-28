@@ -55,3 +55,23 @@ func reverseWords(s string) string {
 	}
 	return strings.TrimSpace(newS.String())
 }
+
+// reverseWords2: 同reverseWords
+func reverseWords2(s string) string {
+	s = strings.TrimSpace(s)
+	newStr := strings.Builder{}
+
+	i := len(s) - 1
+	for i >= 0 {
+		for i >= 0 && s[i] != ' ' {
+			i--
+		}
+		newStr.WriteString(s[i+1:] + " ")
+		for i >= 0 && s[i] == ' ' {
+			i--
+		}
+		//reverseWords 中使用 j 记录最后的下标, 而 reverseWords2 这里选择直接截断已经翻转过的数据
+		s = s[:i+1]
+	}
+	return strings.TrimSpace(newStr.String())
+}

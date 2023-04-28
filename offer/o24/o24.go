@@ -24,11 +24,11 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// 执行用时： 4 ms , 在所有 Go 提交中击败了 37.55% 的用户
+// 执行用时： 0 ms , 在所有 Go 提交中击败了 100.00% 的用户
 // 内存消耗： 2.4 MB , 在所有 Go 提交中击败了 85.27% 的用户
 func reverseList(head *ListNode) *ListNode {
 	cur := head
-	var pre interface{}
+	var pre any
 
 	for cur != nil {
 		tmp := cur.Next

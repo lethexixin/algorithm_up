@@ -56,11 +56,9 @@ func mirrorTree(root *TreeNode) *TreeNode {
 		tmp := node.Left
 		if node.Left != nil {
 			l.PushBack(node.Left)
-
 		}
 		if node.Right != nil {
 			l.PushBack(node.Right)
-
 		}
 		node.Left = node.Right
 		node.Right = tmp

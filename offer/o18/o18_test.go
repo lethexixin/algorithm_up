@@ -10,8 +10,14 @@ func TestF(t *testing.T) {
 			Next: &ListNode{
 				Val: 1,
 				Next: &ListNode{
-					Val:  9,
-					Next: nil,
+					Val: 9,
+					Next: &ListNode{
+						Val: 5,
+						Next: &ListNode{
+							Val:  8,
+							Next: nil,
+						},
+					},
 				},
 			},
 		},
