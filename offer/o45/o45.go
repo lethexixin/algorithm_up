@@ -1,6 +1,7 @@
 package o45
 
 import (
+	"fmt"
 	"sort"
 	"strconv"
 	"strings"
@@ -30,6 +31,8 @@ import (
 //作者：Krahets
 //链接：https://leetcode.cn/leetbook/read/illustration-of-algorithm/59ypcj/
 
+// 执行用时： 4 ms, 在所有 Go 提交中击败了 70.54% 的用户
+// 内存消耗： 2.5 MB, 在所有 Go 提交中击败了 63.07% 的用户
 func minNumber(nums []int) string {
 	a := make([]string, 0)
 	for i := 0; i < len(nums); i++ {
@@ -44,4 +47,19 @@ func minNumber(nums []int) string {
 		return a2 < b2
 	})
 	return strings.Join(a, "")
+}
+
+// 执行用时： 4 ms , 在所有 Go 提交中击败了 70.54% 的用户
+// 内存消耗： 2.6 MB , 在所有 Go 提交中击败了 58.51% 的用户
+func minNumber2(nums []int) string {
+	str := strings.Builder{}
+	sort.Slice(nums, func(i, j int) bool {
+		xy := fmt.Sprintf("%d%d", nums[i], nums[j])
+		yx := fmt.Sprintf("%d%d", nums[j], nums[i])
+		return xy < yx
+	})
+	for _, num := range nums {
+		str.WriteString(fmt.Sprintf("%d", num))
+	}
+	return str.String()
 }

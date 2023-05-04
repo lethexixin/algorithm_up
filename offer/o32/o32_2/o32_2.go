@@ -79,6 +79,7 @@ func LevelOrder2(root *TreeNode) [][]int {
 
 	res := make([][]int, 0)
 
+	//建议用 LevelOrder3 更好理解
 	for len(queue) != 0 {
 		tmp := make([]int, 0)
 		length := len(queue)
@@ -93,6 +94,38 @@ func LevelOrder2(root *TreeNode) [][]int {
 				queue = append(queue, cur.Right)
 			}
 		}
+		res = append(res, tmp)
+	}
+
+	return res
+}
+
+// 执行用时： 0 ms , 在所有 Go 提交中击败了 100.00% 的用户
+// 内存消耗： 2.6 MB , 在所有 Go 提交中击败了 35.41% 的用户
+
+func LevelOrder3(root *TreeNode) [][]int {
+	if root == nil {
+		return [][]int{}
+	}
+
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
+
+	res := make([][]int, 0)
+
+	for len(queue) != 0 {
+		tmp := make([]int, 0)
+		length := len(queue)
+		for i := 0; i < length; i++ {
+			tmp = append(tmp, queue[i].Val)
+			if queue[i].Left != nil {
+				queue = append(queue, queue[i].Left)
+			}
+			if queue[i].Right != nil {
+				queue = append(queue, queue[i].Right)
+			}
+		}
+		queue = queue[length:]
 		res = append(res, tmp)
 	}
 
