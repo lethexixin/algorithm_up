@@ -1,7 +1,5 @@
 package o33
 
-import "fmt"
-
 //剑指 Offer 33. 二叉搜索树的后序遍历序列
 //输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。
 //如果是则返回true，否则返回false。假设输入的数组的任意两个数字都互不相同。
@@ -37,7 +35,7 @@ func verifyPostorder(postorder []int) bool {
 }
 
 func recur(postorder []int, i, j int) bool {
-	fmt.Println(postorder[i : j+1])
+	//fmt.Println(postorder[i : j+1])
 	if i >= j {
 		return true
 	}
